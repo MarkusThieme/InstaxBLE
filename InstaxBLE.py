@@ -381,6 +381,7 @@ class InstaxBLE:
 
         # self.log(f"len of imagedata: {len(imgData)}")
         self.packetsForPrinting = [
+            # \x02\x00\x00\x00 payload made of four bytes: pictureType, picturePrintOption, picturePrintOption2, zero
             self.create_packet(EventType.PRINT_IMAGE_DOWNLOAD_START, b'\x02\x00\x00\x00' + pack('>I', len(imgData)))
         ]
 
